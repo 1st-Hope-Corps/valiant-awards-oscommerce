@@ -1,0 +1,152 @@
+<script type="text/javascript" language="JavaScript">
+function Toggle(sDivID, bBool){
+	var oDiv = document.getElementById(sDivID);
+	oDiv.style.display = (bBool) ? "block":"none";
+}
+
+function AspectRatio(iInputWidth, iInputHeight){
+	var iNewHeight;
+	var iNewWidth;
+	
+	if (iInputWidth >= iInputHeight){
+		// Landscape
+		var iTempH = iInputHeight*iMaxWidth/iInputWidth;
+		
+		if (iTempH <= iMaxHeight){
+			iNewHeight = iTempH;
+			iNewWidth = iMaxWidth;
+		}else{
+			iNewHeight = iMaxHeight;
+			iNewWidth = iInputWidth*iMaxHeight/iInputHeight;
+		}
+	}else{
+		// Portrait
+		var iTempW = iInputWidth*iMaxHeight/iInputHeight;
+		
+		if (iTempW <= iMaxWidth){
+			iNewWidth = iTempW;
+			iNewHeight = iMaxHeight;
+		}else{
+			iNewWidth = iMaxWidth;
+			iNewHeight = iInputHeight*iMaxWidth/iInputWidth;
+		}
+	}
+	
+	var iPaddingLeft = (iMaxWidth-iNewWidth)/2;
+	var iPaddingTop = (iMaxHeight-iNewHeight)/2;
+	
+	return {width:iNewWidth, height:iNewHeight, left:iPaddingLeft, top:iPaddingTop};
+}
+
+function ChangeOpacity(sInputID, iInputOpacity){
+	var oThisElement = document.getElementById(sInputID).style;
+	oThisElement.opacity = (iInputOpacity / 100);
+	oThisElement.MozOpacity = (iInputOpacity / 100);
+	oThisElement.KhtmlOpacity = (iInputOpacity / 100);
+	oThisElement.filter = "alpha(opacity=" + iInputOpacity + ")";
+}
+
+function BlendImage(sInputDivID, sInputImageID, iInputIndex, iInputMillisec){
+	var iSpeed = Math.round(iInputMillisec / 100);
+	var iTimer = 0;
+
+	// Set the current image as background
+	document.getElementById(sInputDivID).style.backgroundImage = "";
+
+	// Make image transparent
+	ChangeOpacity(sInputImageID, 0);
+	
+	// Get the dimension of the preloaded image
+	var oPreloded = document.getElementById("Preload"+iInputIndex);
+	var oImageRatio = AspectRatio(oPreloded.offsetWidth, oPreloded.offsetHeight);
+	
+	// Make new image
+	var oThisImage = document.getElementById(sInputImageID);
+	//oThisImage.style.paddingTop = oImageRatio.top;
+	//oThisImage.style.paddingLeft = oImageRatio.left;
+	oThisImage.style.marginTop = oImageRatio.top;
+	oThisImage.style.marginLeft = oImageRatio.left;
+	oThisImage.style.width = oImageRatio.width;
+	oThisImage.style.height = oImageRatio.height;
+	oThisImage.src = oPreloded.src;
+
+	// Fade in image
+	for (i = 0; i <= 100; i++){
+		setTimeout("ChangeOpacity('" + sInputImageID + "'," + i + ")", (iTimer * iSpeed));
+		iTimer++;
+	}
+}
+
+function Rotate(sInputSlideContainer, sInputImageContainer){
+	if (bStartSlideShow){
+		Toggle("SlideStatus", false);
+		
+		if (iCurrentIndex == aPicList.length) iCurrentIndex = 0;
+		
+		BlendImage(sInputSlideContainer, sInputImageContainer, iCurrentIndex, 1000);
+		iCurrentIndex++;
+		
+		setTimeout("Rotate('"+sInputSlideContainer+"', '"+sInputImageContainer+"');", iSlideDelay);
+	}
+}
+
+function Preloder(aInputPicList){
+	var oImg;
+	SetStatus("Slideshow loading...");
+	
+	for (i = 0; i < aInputPicList.length; i++){
+		oImg = document.createElement("img");
+		oImg.setAttribute("id", "Preload"+i);
+		oImg.style.display = "block";
+		oImg.style.position = "absolute";
+		oImg.style.left = "-9999";
+		oImg.style.top = "-9999";
+		oImg.src = aInputPicList[i];
+		
+		document.body.appendChild(oImg);
+	}
+}
+
+function SetStatus(sInputStatus){
+	var iWidth = 200;
+	var iHeight = 15;
+	var oSlide = document.getElementById("SlideStatus");
+	oSlide.style.position = "relative";
+	oSlide.style.width = iWidth+"px";
+	oSlide.style.height = iHeight+"px";
+	oSlide.style.left = (iMaxWidth-15-iWidth)+"px";
+	oSlide.style.top = (iMaxHeight-15-iHeight)+"px";
+	oSlide.style.textAlign = "right";
+	oSlide.style.verticalAlign = "baseline";
+	oSlide.innerHTML = sInputStatus;
+	
+	Toggle("SlideStatus", true);
+}
+
+var iMaxHeight = 350;
+var iMaxWidth = 350;
+var iCurrentIndex = 0;
+var iSlideDelay = 4000;
+var bStartSlideShow = true;
+var aPicList = new Array();
+
+aPicList[0] = "images/ning/1234345840_1w79yiyg47rfy_yamaha_fx370c.jpg";
+aPicList[1] = "images/ning/1234347345_1w79yiyg47rfy_whisker.black.iridium.jpg";
+aPicList[2] = "images/ning/1234345337_1w79yiyg47rfy_tux.jpg";
+aPicList[3] = "images/ning/1234454407_1th4ktkhes1uq_hope_00.jpg";
+
+window.onload = function(){
+					Preloder(aPicList);
+					setTimeout("Rotate('SlideContainer', 'ImageContainer');", 3000);
+				}
+</script>
+
+<div id="SlideContainer" style="background-repeat:no-repeat; width:350px; height:350px; border:thin solid #CCCCFF; padding:1px">
+    <img id="ImageContainer" src="" style="border:0 none; filter:alpha(opacity=0); -moz-opacity:0; opacity:0;" alt="" align="center" valign="middle" />
+	<div id="SlideStatus" style="font-family:arial; font-size:0.9em; font-weight:bold;"></div>
+</div>
+
+<!--
+<a href="javascript:BlendImage('SlideContainer', 'ImageContainer', 0, 1000)">Image 1</a>
+<a href="javascript:BlendImage('SlideContainer', 'ImageContainer', 1, 1000)">Image 2</a>
+ -->

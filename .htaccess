@@ -1,0 +1,2 @@
+php_flag display_errors on
+php_flag post_max_size 40M

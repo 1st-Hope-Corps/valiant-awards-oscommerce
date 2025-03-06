@@ -1,0 +1,131 @@
+<script type="text/javascript" language="JavaScript">
+function Opacity(sInputID, iInputOpacStart, iInputOpacEnd, iInputMillisec){
+	// Speed for each frame
+	var iSpeed = Math.round(iInputMillisec / 100);
+	var iTimer = 0;
+
+	// Determine the direction for the blending, if start and end are the same nothing happens
+	if (iInputOpacStart > iInputOpacEnd){
+		for (i = iInputOpacStart; i >= iInputOpacEnd; i--){
+			setTimeout("ChangeOpacity(" + sInputID + ",'" + i + "')", (iTimer * iSpeed));
+			iTimer++;
+		}
+	}else if (iInputOpacStart < iInputOpacEnd){
+		for(i = iInputOpacStart; i <= iInputOpacEnd; i++){
+			setTimeout("ChangeOpacity(" + sInputID + ",'" + i + "')", (iTimer * iSpeed));
+			iTimer++;
+		}
+	}
+}
+
+var aPicList = new Array();
+var aPicAttr = new Array();
+
+aPicList[0] = "/images/ning/1234345840_1w79yiyg47rfy_yamaha_fx370c.jpg";
+aPicList[1] = "/images/ning/1234347345_1w79yiyg47rfy_whisker.black.iridium.jpg";
+
+function Preloder(aInputPicList){
+	//var oContaner = document.getElementById(sInputContainerID);
+	var iPicListLen = aInputPicList.length;
+	var aPreLoad = new Array();
+
+	for (i = 0; i < iPicListLen; i++){
+		aPreLoad[i] = new Image();
+		aPreLoad[i].src = aPicList[i];
+		
+		oImageRatio = AspectRatio(aPreLoad[i].naturalWidth, aPreLoad[i].naturalHeight);
+		
+		//aPreLoad[i].width = oImageRatio.width;
+		//aPreLoad[i].height = oImageRatio.height;
+		aPicAttr[i] = Array(oImageRatio.width, oImageRatio.height);
+	}
+}
+
+function AspectRatio(iInputWidth, iInputHeight){
+	var iMaxHeight = 350;
+	var iMaxWidth = 350;
+	var iNewHeight;
+	var iNewWidth;
+	
+	if (iInputWidth >= iInputHeight){
+		// Landscape
+		a=1;
+		var iTempH = iInputHeight*iMaxWidth/iInputWidth;
+		
+		if (iTempH <= iMaxHeight){
+			iNewHeight = iTempH;
+			iNewWidth = iMaxWidth;
+		}else{
+			iNewHeight = iMaxHeight;
+			iNewWidth = iInputWidth*iMaxHeight/iInputHeight;
+		}
+	}else{
+		// Portrait
+		a=2;
+		var iTempW = iInputWidth*iMaxHeight/iInputHeight;
+		
+		if (iTempW <= iMaxWidth){
+			iNewWidth = iTempW;
+			iNewHeight = iMaxHeight;
+		}else{
+			iNewWidth = iMaxWidth;
+			iNewHeight = iInputHeight*iMaxWidth/iInputWidth;
+		}
+	}
+	alert(a);
+	return {width:iNewWidth, height:iNewHeight};
+}
+
+function ChangeOpacity(sInputID, iInputOpacity){
+	var oThisElement = document.getElementById(sInputID).style;
+	oThisElement.opacity = (iInputOpacity / 100);
+	oThisElement.MozOpacity = (iInputOpacity / 100);
+	oThisElement.KhtmlOpacity = (iInputOpacity / 100);
+	oThisElement.filter = "alpha(opacity=" + iInputOpacity + ")";
+}
+
+function BlendImage(sInputDivID, sInputImageID, sInputImageFile, aInputImageAttr, iInputMillisec){
+	var iSpeed = Math.round(iInputMillisec / 100);
+	var iTimer = 0;
+
+	// Set the current image as background
+	document.getElementById(sInputDivID).style.backgroundImage = "";
+
+	// Make image transparent
+	ChangeOpacity(sInputImageID, 0);
+
+	// Make new image
+	var oThisImage = document.getElementById(sInputImageID);
+	oThisImage.src = sInputImageFile;
+	oThisImage.style.width = aInputImageAttr[0];
+	oThisImage.style.height = aInputImageAttr[1];
+
+	// Fade in image
+	for (i = 0; i <= 100; i++){
+		setTimeout("ChangeOpacity('" + sInputImageID + "'," + i + ")", (iTimer * iSpeed));
+		iTimer++;
+	}
+}
+
+window.onload = function(){
+					Preloder(aPicList);
+					alert("w: "+aPicAttr[1][0]+", h:"+aPicAttr[1][1]);
+					
+					//var iSpeed = Math.round(2000 / 100);
+					//var iTimer = 1;
+					
+					//for (i = 0; i < aPicList.length; i++){
+					//	setTimeout("BlendImage('SlideContainer', 'ImageContainer', '"+aPicList[i]+"', "+aPicAttr[i]+", 1000);", (iTimer * iSpeed));
+					//	iTimer++;
+					//}
+				}
+</script>
+
+<div id="PreloadContainer" style="display;none;"></div>
+
+<div id="SlideContainer" style="background-repeat:no-repeat; width:350px; height:350px; border:thin solid #CCCCFF;">
+    <img id="ImageContainer" src="" style="border:0 none; filter:alpha(opacity=0); -moz-opacity:0; opacity:0;" alt="" align="center" valign="middle" />
+</div>
+
+<a href="javascript:BlendImage('SlideContainer', 'ImageContainer', aPicList[0], aPicAttr[0], 1000)">Image 1</a>
+<a href="javascript:BlendImage('SlideContainer', 'ImageContainer', aPicList[1], aPicAttr[1], 1000)">Image 2</a>

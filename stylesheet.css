@@ -1,0 +1,401 @@
+/*
+  $Id: stylesheet.css,v 1.56 2003/06/30 20:04:02 hpdl Exp $
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+  Copyright (c) 2003 osCommerce
+  Released under the GNU General Public License
+*/
+.boxText 				{ font-family: Verdana, Arial, sans-serif; font-size: 10px; }
+.errorBox 				{ font-family : Verdana, Arial, sans-serif; font-size : 10px; background: #FFFF00; font-weight: bold; }
+.stockWarning 			{ font-family : Verdana, Arial, sans-serif; font-size : 10px; color: #FFFF00; }
+.productsNotifications 	{ background: #FFFF00; }
+.orderEdit 				{ font-family : Verdana, Arial, sans-serif; font-size : 10px; color: #FFFF00; text-decoration: underline; }
+
+BODY 					{background:  url(images/beck_trans.png) ; filter: alpha(opacity=50);     
+}
+
+.infoBox 				{background: #66ff0e;}
+.infoBoxContents 		{background: #0c2f01;font-family: Verdana, Arial, sans-serif; font-size: 10px;}
+
+/*  A {color: #66ff0e;  text-decoration: none;}A:hover {  color: #66ff0e;  text-decoration: underline;}  */
+FORM 					{display: inline;}
+TR.header 				{background: #0c2f01;}
+TR.headerNavigation 	{background: #FFFF00;}
+TD.headerNavigation 	{font-family: Verdana, Arial, sans-serif; font-size: 10px; background: #0c2f01; color: #0c2f01; font-weight : bold;}
+/*  A.headerNavigation {color: #0c2f01; }A.headerNavigation:hover { color: #0c2f01;
+}  */
+TR.headerError 		{background: #ff0000;}
+TD.headerError 		{font-family: Tahoma, Verdana, Arial, sans-serif; font-size: 12px; background: #FFFF00; color: #FFFF00; font-weight : bold; text-align : center;}
+TR.headerInfo 		{background: #66ff0e;}
+TD.headerInfo 		{font-family: Tahoma, Verdana, Arial, sans-serif;font-size: 12px;background: #ff0000;color: #0c2f01;font-weight: bold;text-align: center;}
+/*  TR.footer {background: #0c2f01;}TD.footer {  font-family: Verdana, Arial, sans-serif;  font-size: 10px; background: #0c2f01; color: #FFFF00;  font-weight: bold;}*/
+.infoBoxNotice 				{background: #FFFF00;}
+.infoBoxNoticeContents 		{background: #FFFF00;font-family: Verdana, Arial, sans-serif; font-size: 10px;}
+TD.infoBoxHeading 			{font-family: Verdana, Arial, sans-serif;font-size: 10px;font-weight: bold;background: #FFFF00;}
+TD.infoBox, SPAN.infoBox 	{font-family: Verdana, Arial, sans-serif; font-size: 10px;}
+
+TR.accountHistory-odd, TR.addressBook-odd, TR.alsoPurchased-odd, TR.payment-odd, TR.productListing-odd, TR.productReviews-odd, TR.upcomingProducts-odd, TR.shippingOptions-odd 			{background: #FFFF00;}
+TR.accountHistory-even, TR.addressBook-even, TR.alsoPurchased-even, TR.payment-even, TR.productListing-even, TR.productReviews-even, TR.upcomingProducts-even, TR.shippingOptions-even 		{background: #FFFF00;}
+TABLE.productListing 			{border: 1px;border-style: solid;border-color: #FFFF00;border-spacing: 1px;}
+.productListing-heading 		{font-family: Verdana, Arial, sans-serif;font-size: 10px;background: #FFFF00;color: #FFFF00;font-weight: bold;}
+TD.productListing-data 			{font-family: Verdana, Arial, sans-serif;font-size: 10px;}
+TD.pageHeading, DIV.pageHeading {font-family: Verdana, Arial, sans-serif;font-size: 20px;font-weight: bold;color: #FFFF00;}
+TR.subBar 						{background: #FFFF00;}
+TD.subBar 						{font-family: Verdana, Arial, sans-serif;font-size: 10px;color: #FFFF00;}
+/* -------------------------------------------------          -------------------------------------------------------- */
+/* -------------------------------------------------          -------------------------------------------------------- */
+TD.main, P.main 							{font-family: Verdana, Arial, sans-serif;font-size: 11px;line-height: 1.5;}
+TD.smallText, SPAN.smallText, P.smallText 	{font-family: Verdana, Arial, sans-serif;font-size: 10px;}
+TD.accountCategory 							{font-family: Verdana, Arial, sans-serif;font-size: 13px;color: #FFFF00;}
+TD.tableHeading 							{font-family: Verdana, Arial, sans-serif;font-size: 12px;font-weight: bold;}
+CHECKBOX, INPUT, RADIO, SELECT 				{font-family: Verdana, Arial, sans-serif;font-size: 11px;}
+TEXTAREA 									{width: 100%;font-family: Verdana, Arial, sans-serif;font-size: 11px;}
+SPAN.greetUser 								{font-family: Verdana, Arial, sans-serif;font-size: 12px;color: #FFFF00;font-weight: bold;}
+TABLE.formArea 								{background: #FFFF00;border-color: #FFFF00;border-style: solid;border-width: 1px;}
+TD.formAreaTitle 							{font-family: Tahoma, Verdana, Arial, sans-serif;font-size: 12px;font-weight: bold;}
+SPAN.markProductOutOfStock 					{font-family: Tahoma, Verdana, Arial, sans-serif;font-size: 12px;color: #FFFF00;font-weight: bold;}
+SPAN.errorText 								{font-family: Verdana, Arial, sans-serif;color: #66ff0e;}
+
+.moduleRow { }
+.moduleRowOver 								{background-color: #FFFF00; cursor: pointer; cursor: hand; }
+.moduleRowSelected 							{background-color: #FFFF00; }
+
+.checkoutBarFrom, .checkoutBarTo 			{font-family: Verdana, Arial, sans-serif; font-size: 10px; color: #FFFF00; }
+.checkoutBarCurrent 						{font-family: Verdana, Arial, sans-serif; font-size: 10px; color: #FFFF00; }
+/* message box */
+.messageBox 								{font-family: Verdana, Arial, sans-serif; font-size: 10px; color: #FFFF00;}
+.messageStackError, .messageStackWarning 	{font-family: Verdana, Arial, sans-serif; font-size: 10px; background-color: #FFFF00; }
+.messageStackSuccess 						{font-family: Verdana, Arial, sans-serif; font-size: 10px; background-color: #66ff0e; }
+#myse select 								{width:90%;}
+/* input requirement */
+.product .inputRequirement, .inputRequirement 					
+											{font-family: Verdana, Arial, sans-serif; font-size: 10px; color:#66ff0e; }
+/* -------------------------------------------------          -------------------------------------------------------- */
+/*  del {color:#FFFF00;font-size:12px; font-weight:bold}  */
+s {color:#FFFF00;font-size:11px;font-weight:normal;}
+/* -------------------------------------------------          -------------------------------------------------------- */
+
+img      {border:0px;}
+table	 {width:100%;}
+
+td{
+ font-family: tahoma;
+ font-size: 11px;
+ color: #FFFF00; vertical-align:top;
+}
+ .ch1{
+ border-left: #66ff0e 1px solid;
+ border-right: #66ff0e 1px solid;
+ }
+ .ch2{
+ padding-left: 13px;
+ }               
+ .ch3{
+ font-size: 10px;
+ font-weight: bold;
+ color: #FFFF00;
+ }
+
+ .ch4{
+ font-size: 11px;
+ color: #FFFF00;
+ }
+
+ .ch5{
+ font-size: 11px;
+ font-weight: bold;
+ text-decoration: none; 
+ color: #FFFF00;
+ }
+
+ .ch6{
+ 
+ 
+ }
+
+ .ch7{
+ border-left: #66ff0e 1px solid;
+ border-right: #66ff0e 1px solid;
+ }
+
+ .ch8{
+ font-size: 14px;
+ font-weight: bold;
+ color: #FFFF00;
+ }
+
+ .ch9{
+ font-size: 14px;
+ font-family: arial;
+ font-weight: bold;
+ text-decoration: none; 
+ color: #FFFF00;
+ }
+
+ .ch10{
+ font-size: 11px;
+ font-weight: bold;
+ color: #FFFF00;
+ }
+
+ .ch11{
+ font-size: 12px;
+ font-weight: bold;
+ color: #FFFF00;
+ }
+
+ .ch12{
+ font-size: 11px;
+ color: #FFFF00;
+ }
+
+ .ch13{
+ font-size: 14px;
+ font-weight: bold;
+ color: #FFFF00;
+ }
+
+ .ch14{
+ font-size: 11px;
+ color: #FFFF00;
+ }
+
+ .ch15{
+ font-size: 11px;
+ text-decoration: none; 
+ color: #FFFF00;
+ }
+
+ .ch16{
+ font-size: 11px;
+ text-decoration: none; 
+ color: #FFFF00;
+ }
+
+ .ch17{
+ font-size: 13px;
+ color: #FFFF00;
+ }
+
+ .ch18{
+ font-size: 13px;
+ color: #FFFF00;
+ }
+  .se{            
+ width: 100px;
+ font-size: 9px;
+ color: #FFFF00;
+ }
+ .se2{            
+ width: 115px;
+ font-size: 9px;
+ color: #0c2f01;
+ }
+/* -------------------------------------------------          -------------------------------------------------------- */
+/* -------------------------          ------------------------- */
+
+.cont_header_txt {  color: #FFFF00;font-size: 11px;font-weight:bold;text-transform:uppercase;
+
+				height:29px;vertical-align:middle;background: url(images/m22.gif) top left no-repeat #FFFF00; padding-left:26px; border-right:4px solid #0c2f01;}
+.cont_header_txt a { 
+				color: #FFFF00;font-size: 11px;font-weight:bold;text-transform:uppercase; text-decoration:none;}				  
+.cont_header_txt a:hover { 
+				color: #FFFF00;font-size: 11px;font-weight:bold;text-transform:uppercase; text-decoration:underline;}	
+							  
+.box_header_txt	{  color: #FFFF00;font-size: 11px;font-weight:bold;text-transform:uppercase;
+
+				height:29px;vertical-align:middle;background: url(images/m14.gif) top left no-repeat #0c2f01; padding-left:26px;}											.box_header_txt a { 
+				color: #FFFF00;font-size: 11px;font-weight:bold;text-transform:uppercase; text-decoration:none;}				  
+.box_header_txt a:hover { 
+				color: #FFFF00;font-size: 11px;font-weight:bold;text-transform:uppercase; text-decoration:underline;}	
+em,i	{ font-style:normal;}  
+
+/* -------------------------------------------------          -------------------------------------------------------- */
+.box_body  ul 		 	 	{padding:0; margin:0; list-style:none; }
+.box_body .bg_list 	 	 	{background:url(images/bg_list.gif) left top no-repeat;}
+.box_body .bg_list  a	 	{color:#FFFF00;text-decoration:none; padding-left:18px; line-height:22px;     background:#0c2f01   }
+.box_body .bg_list  a:hover	{color:#FFFF00;text-decoration:none;}
+
+.box_body .bg_list_un 	 	 	{background:url(images/bg_list_un.gif) left top no-repeat;}
+.box_body .bg_list_un  a	 	{color:#FFFF00;text-decoration:none; padding-left:18px; line-height:22px;  }
+.box_body .bg_list_un  a:hover	{color:#FFFF00;text-decoration:none;}
+
+.box_body .bg_list_sub 	{background:url(images/bg_list_sub.gif) no-repeat 0 0;}
+.box_body .bg_list_sub  a	{color:#FFFF00;text-decoration:none; padding-left:28px; line-height:22px;}
+.box_body .bg_list_sub  a:hover	{color:#FFFF00;text-decoration:none;}
+/* -------------------------------------------------          -------------------------------------------------------- */
+.product			{background:#0c2f01}
+.product td         {color:#FFFF00; font-size:11px; line-height:14px; font-weight:normal;}
+.product a          { font-size: 14px; font-family:tahoma;color:#66ff0e;text-decoration: none; font-weight:bold;}
+.product a:hover	{color:#FFFF00;text-decoration:none;}
+
+.box_body td         		{color:#FFFF00;}
+.box_body span a          	{font-size: 12px; font-family:tahoma;color:#FFFF00;text-decoration: none; font-weight:bold;}
+.box_body span a:hover		{color:#FFFF00;text-decoration:none;}
+
+.box_body  a        { font-size: 12px; font-family:tahoma;color:#FFFF00;text-decoration: none;}
+.box_body  a:hover	{color:#FFFF00;text-decoration:none;}
+
+.pic_2					{ border:1px solid #FFFF00;}
+
+
+.product div {padding:5px 0px 8px 0px; text-align:center;}
+.product div a		    { font-size: 11px;font-family: arial;font-weight:normal;color:#FFFF00;text-decoration: none;}
+.product div a:hover    { font-size: 11px;font-family: arial;font-weight:normal;color:#FFFF00;text-decoration: underline;}
+
+.product em          {color:#FFFF00; font-size:11px; line-height:14px;  font-weight:bold;}
+/* -------------------------------------------------          -------------------------------------------------------- */
+SPAN.productSpecialPrice, .box_body SPAN.productSpecialPrice, .product SPAN.productSpecialPrice  {
+  font-size: 14px; font-family:tahoma;color:#FFFF00;text-decoration: none; font-weight:bold;}
+/* -------------------------------------------------          -------------------------------------------------------- */
+/* -------------------------          ------------------------- */
+.footer td 		  {color:#FFFF00; font-size:11px; text-align:right;}			
+.footer a 		  {color:#FFFF00; font-size:11px; text-decoration:none;} 			
+.footer a:hover   {color:#FFFF00;text-decoration:underline;}				
+.footer b, .footer b a 	  {color:#FFFF00; font-size:11px; font-weight:bold; text-decoration:underline;}			
+.footer b a:hover {color:#FFFF00; text-decoration:none;}				
+
+.se3	{ border:1px solid #66ff0e; width:35px;}
+/* -------------------------------------------------          -------------------------------------------------------- */
+input	{background:#0c2f01;}
+
+.main a b {
+  color:#FFFF00;
+  font-size: 10px; text-decoration:underline;
+}
+.main a:hover b{
+  color:#FFFF00;
+  font-size: 10px; text-decoration:none;
+}
+/* -------------------------------------------------          -------------------------------------------------------- */
+/* -------------------------------------------------          -------------------------------------------------------- */
+.smallText a { color:#66ff0e; font-size:11px; text-decoration:none;}	/*  advanced_search.php  */
+.smallText a:hover { color:#66ff0e; font-size:11px; text-decoration:underline;}
+.smallText a u { color:#66ff0e; font-size:11px; text-decoration:none;}
+.smallText a:hover u{ color:#66ff0e; font-size:11px; text-decoration:underline;}
+
+TD.fieldKey {	font-size: 12px;font-weight: bold;font-family: Verdana, Arial, sans-serif;	color:#FFFF00;}
+TD.fieldValue {	font-size: 12px;font-family: Verdana, Arial, sans-serif;padding:3px 2px 3px 2px;}
+
+TD.smallText {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px; color:#FFFF00;
+}
+SPAN.smallText {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10px;
+}
+.smallText font b { color:#FFFF00; text-decoration:none; font-size:11px }
+/* -------------------------------------------------          -------------------------------------------------------- */
+/* -------------------------------------------------          -------------------------------------------------------- */
+.product .shop_cart { height:41px;text-align:center; vertical-align:middle;color:#FFFF00; font-size:12px; font-weight:bold; background:#006600;}
+.shop_cart b {color:#FFFF00; font-size:12px; font-weight:bold;}
+.sea_1 { padding:0px 10px 0px 10px;}
+.sea_2 { padding:10px;}
+.padd2 td	{padding:10px;}
+div.padd3 	{ padding-left:10px; text-align:left;}
+.bg_gg	{background:url(images/bg_gg.gif) left top repeat-x;}
+.bg_vv	{background:url(images/bg_vv.gif) left top repeat-y;}
+.prod_info	{ width:10px;}
+.prod_info img	{ border-left:10px solid #FFFF00;}
+/* -------------------------------------------------          -------------------------------------------------------- */
+/* -------------------------------------------------          -------------------------------------------------------- */
+/*--------------------- content ---------------------------------*/
+.box_width_left			{ width:208px;}
+.box_width_right		{ width:0px;}
+.box_width_cont			{ width:100%;}			
+
+/* -------------------------------------------------          -------------------------------------------------------- */
+/* -------------------------------------------------          -------------------------------------------------------- */
+.result 		{margin:0px 0px 0px 0px;}
+.result td  	{width:50%; vertical-align:middle;padding:1px 16px;}
+.result_right 	{text-align:right;}
+.result td  	{color:#FFFF00; font-size:11px;}
+.result b   	{color:#FFFF00; font-weight:normal;}
+ 
+.result_right b							{color:#FFFF00; font-size:11px; font-weight:bold;}
+.result_right a.pageResults				{color:#FFFF00; font-size:11px;text-decoration:underline; }
+.result_right a.pageResults:hover 		{color:#FFFF00;	text-decoration:none; }
+.result_right a.pageResults	u			{color:#FFFF00; font-size:11px; text-decoration:underline;}
+.result_right a.pageResults u:hover 	{color:#FFFF00;	text-decoration:none;}
+/* -------------------------------------------------          -------------------------------------------------------- */
+
+/* -------------------------------------------------          -------------------------------------------------------- */
+/* -------------------------------------------------          -------------------------------------------------------- */
+/*  heading  */
+.remove 			{width:15%;}
+.products 			{width:50%;}
+.quantity 			{width:15%;}
+.total 				{width:20%;}
+/*  heading  */	
+  
+
+.product .shop_cart {text-align:center; vertical-align:middle;color:#FFFF00; font-size:11px; text-decoration:none; font-weight:bold;}
+
+.cart_line_x 		{background:url(images/bg_line_x.gif) center top repeat-x;}
+/*     */
+.cart_total_left  	{width:80%; text-align:right; vertical-align:middle;height:38px;}
+.cart_total_right  	{width:20%; text-align:center;vertical-align:middle;}
+
+/* -------------------------------------------------          -------------------------------------------------------- */
+SPAN.newItemInCart 						{font-family: Verdana, Arial, sans-serif;font-size:10px;color: #FFFF00;}
+.box_body a SPAN.newItemInCart 			{font-family: Verdana, Arial, sans-serif;font-size:10px;color: #FFFF00; text-decoration:underline;}
+/* -------------------------------------------------          -------------------------------------------------------- */
+/* -------------------------------------------------          -------------------------------------------------------- */
+/* -------------------------------------------------          -------------------------------------------------------- */
+span.txt_1	{font-size:10px; text-transform:none; color:#66ff0e;}	
+
+.cont_header_txt	em	{color:#66ff0e; font-size:14px; font-weight:bold; font-style:normal;vertical-align:middle;text-decoration:none;}
+.product em		    	{font-size: 14px; font-family:tahoma;color:#0c2f01;text-decoration: none; font-weight:bold; font-style:normal;} 
+/* -------------------------------------------------          -------------------------------------------------------- */
+/* -------------------------------------------------          -------------------------------------------------------- */
+.main	a		{color:#FFFF00; text-decoration:underline;}
+.main	a:hover	{color:#FFFF00; text-decoration:none;}
+.vam			{vertical-align:middle;}
+input			{background:#e2f3c7;}
+.bg_input input	{background:none;}
+/* -------------------------------------------------          -------------------------------------------------------- */
+/* -------------------------------------------------          -------------------------------------------------------- */
+
+.padd_1 	{padding:0px 10px 0px 10px; background:#0c2f01;}
+.padd_22 	{padding:8px;background:#0c2f01;}
+td.padd2 	{padding:8px; padding-left:4px; background:#0c2f01;}
+
+.line_h		{line-height:16px; background:#0c2f01;}
+
+.bg_line_x						{background:url(images/bg_line_x.gif) left center repeat-x;}
+.bg_line_y						{background:url(images/bg_line_y.gif) center top repeat-y;}
+/* -------------------------------------------------          -------------------------------------------------------- */
+.product div					{padding:8px 0px 5px 0px;}
+div.padd3						{text-align:left; padding-top:0px; margin-left:0px; margin-right:0px; background:#0c2f01;}
+.padd33 img, .padd33 input 		{margin:1px; background:#0c2f01;}
+
+.title_info		{width:230px;}
+.title_info td	{vertical-align:middle; height:38px;}
+.table_pic_width	{width:1px;}
+.prod_info		{ float:left; margin-right:15px;   color:#0c2f01; }
+.prod_info td	{text-align:center;}
+
+/* -------------------------------------------------          -------------------------------------------------------- */
+/* -------------------------------------------------          -------------------------------------------------------- */
+.heading_top_1			{margin-top:0px; background:#0c2f01;}
+.heading_top_1 .padd_11	{padding:18px 10px 9px 18px; background:#0c2f01;}
+
+.heading_top_2			{margin-top:0px; background:#0c2f01;}
+.heading_top_2 .padd_22	{padding:0px 20px 0px 20px; background:#0c2f01;}
+
+.heading_top_3			{margin-top:9px; margin-bottom:9px; background:#0c2f01;}
+.heading_top_3 .padd_33	{padding:0px 10px 9px 18px;}
+
+.heading_top_4			{margin-top:0px; background:#0c2f01;}
+.heading_top_4 .padd_44	{padding:8px 10px 9px 18px background:#0c2f01;}
+
+
+.tableBox_output		{margin-top:9px; margin-bottom:9px; background:#0c2f01;}
+.tableBox_shopping_cart	{margin-top:0px; background:#0c2f01;}
+
+.tep_draw_separate		{height:5px; background:#0c2f01;}
+
+.tep_draw_prod_top		{padding:0px 0px 9px 0px; background:#0c2f01;
+.tep_draw_box_prod		{}
+/*    */
