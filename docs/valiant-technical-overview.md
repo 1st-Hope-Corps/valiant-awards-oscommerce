@@ -6,7 +6,7 @@ Version 0.0.1
 
 # Description and Folder Structure
 
-Banking is a way to store transactions that is used on claiming wGold
+Banking is a way to store transactions that is used on claiming Valiants
 for Samaritan CItation site. It has its own isolated database for
 transactions, users and dev users which are used for the connection
 authentication.
@@ -101,18 +101,18 @@ and descriptions:
 bank_user
 
 - This table defines all the bank accounts of the user. It is used for
-  transacting wGold.
+  transacting Valiants.
 
 - It has the same exact table on the samaritan citation database which
   is bank_account.
 
 bank_user_balance
 
-- This table is used to store balance, pending and turnover wGold
+- This table is used to store balance, pending and turnover Valiants
 
 bank_user_transact
 
-- This table is used to store transactions or line items of the wGold
+- This table is used to store transactions or line items of the Valiants
   transaction. It is also used to retrieve history.
 
 dev_user
@@ -129,8 +129,8 @@ See Entity Relations Diagram below:\
 
 # Kindness integration
 
-In order to have wGold, the user needs to be reported as a benefactor.
-We are calling the banking API to create a bank account and insert wGold
+In order to have Valiants, the user needs to be reported as a benefactor.
+We are calling the banking API to create a bank account and insert Valiants
 for the benefactor after submitting the kindness report. See below the
 integrations we call on this module:
 
@@ -142,8 +142,9 @@ integrations we call on this module:
   located in the */sites/all/modules/bank/bank.module* which calls the
   \_bank_post that will call the banking API.
 
-2.  Adding wGold to the benefactor
+2.  Adding Valiants to the benefactor
 
 - This is defined on the /sites/all/modules/kindness/kindness.module and
   search **\_add_gold** private method then calls the \_bank_post that
   will call the banking API.
+
